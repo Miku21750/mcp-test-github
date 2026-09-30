@@ -97,6 +97,30 @@ The aim is documentation that is useful to a developer while keeping a little pe
 
 ---
 
+## 🧪 Issue-to-PR Test Checklist
+
+Use this workflow when testing a small documentation change through the GitHub plugin:
+
+1. **Create an issue.** Describe the change and its acceptance criteria.
+2. **Create a branch from `main`.** Keep the proposed edit on a dedicated branch.
+3. **Fetch the file before updating it.** Use its current blob SHA to avoid replacing a newer edit.
+4. **Commit the README change.** Use a clear message such as `docs: add workflow checklist`.
+5. **Read the committed file back.** Confirm the intended section exists and the existing content is preserved.
+6. **Open a pull request targeting `main`.** Add `Closes #<issue-number>` to the PR body.
+7. **Review the diff.** Check the scope and Markdown layout before deciding to merge.
+
+**Operational note:** a closing reference resolves the linked issue when the PR is merged into the repository's default branch. Opening the PR alone leaves the issue open.
+
+| Review check | Expected result |
+| --- | --- |
+| Scope | Only the intended documentation changes appear in the diff. |
+| Target | The PR targets `main` from the test branch. |
+| Issue link | The PR body references the relevant issue. |
+| Style | Centered HTML, section separators, tables, and the exact closing motto are preserved. |
+| Verification | The committed file has been read back; visual layout can be checked in GitHub's rendered view. |
+
+---
+
 ## 🛠️ Troubleshooting
 
 | Symptom | Check |
